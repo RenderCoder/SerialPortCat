@@ -15,6 +15,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var tableView: LogTableView!
     @IBOutlet weak var raudRateSelector: NSPopUpButton!
     @IBOutlet weak var customBaudRateTextField: NSTextField!
+    @IBOutlet var sendDataTextView: NSTextView!
     
     var serialPort: ORSSerialPort?
     let previewVC = LogPreviewViewController()
@@ -141,6 +142,39 @@ class ViewController: NSViewController {
         tableView.clear()
     }
     
+    @IBAction func tapSendDataButton(_ sender: NSButton) {
+        NSLog("tapSendDataButton")
+        let sendDataString =  (sendDataTextView.textStorage as NSAttributedString!).string
+        print(sendDataString)
+//        let hex = "ABC".unicodeScalars.filter { $0.isASCII }.map { String(format: "%X", $0.value) }.joined()
+//        if let data = sendDataString.data(using: String.Encoding.utf8) {
+//            
+//            print(hex)
+//            serialPort?.send(data)
+//        }
+        
+        let chars = Array(sendDataString.characters)
+        let numbers: [UInt8] = stride(from: 0, to: chars.count, by: 2).map() {
+            UInt8(strtoul(String(chars[$0 ..< min($0 + 2, chars.count)]), nil, 16))
+        }
+        print(numbers)
+        let data = Data(bytes: numbers)
+        
+        serialPort?.send(data)
+        
+    }
+    
+    func hexaToBytes(_ hexa: String) -> [UInt8] {
+        var position = hexa.startIndex
+        return (0..<hexa.characters.count/2).flatMap { _ in
+            defer { position = hexa.index(position, offsetBy: 2) }
+            return UInt8(hexa[position...hexa.index(after: position)], radix: 16)
+        }
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        NSLog("prepare(for segue")
+    }
 }
 
 extension ViewController: ORSSerialPortDelegate {
@@ -171,5 +205,12 @@ extension ViewController: ORSSerialPortDelegate {
     
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
         print("serialPortWasClosed")
+    }
+}
+
+extension String {
+    var hexa2Bytes: [UInt8] {
+        let hexa = Array(characters)
+        return stride(from: 0, to: characters.count, by: 2).flatMap { UInt8(String(hexa[$0..<$0.advanced(by: 2)]), radix: 16) }
     }
 }

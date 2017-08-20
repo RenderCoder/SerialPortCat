@@ -20,6 +20,9 @@
 		651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F241F49723800FF2637 /* LogPreviewViewController.swift */; };
 		651B9F271F49854900FF2637 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F261F49854900FF2637 /* README.md */; };
 		651B9F291F49888300FF2637 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 651B9F281F49888300FF2637 /* LICENSE */; };
+		651B9F2B1F498C9C00FF2637 /* MainMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F2A1F498C9C00FF2637 /* MainMenuItem.swift */; };
+		651B9F2D1F498D0B00FF2637 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F2C1F498D0B00FF2637 /* MainMenu.swift */; };
+		651B9F301F499FB200FF2637 /* NewWindowMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F2F1F499FB200FF2637 /* NewWindowMenuItem.swift */; };
 		F6C2E77D405766F2A4B3F80D /* Pods_SerialPortCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		651B9F241F49723800FF2637 /* LogPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPreviewViewController.swift; sourceTree = "<group>"; };
 		651B9F261F49854900FF2637 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		651B9F281F49888300FF2637 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		651B9F2A1F498C9C00FF2637 /* MainMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuItem.swift; sourceTree = "<group>"; };
+		651B9F2C1F498D0B00FF2637 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		651B9F2F1F499FB200FF2637 /* NewWindowMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWindowMenuItem.swift; sourceTree = "<group>"; };
 		7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerialPortCat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +85,7 @@
 		651B9F051F48945600FF2637 /* SerialPortCat */ = {
 			isa = PBXGroup;
 			children = (
+				651B9F2E1F498D3500FF2637 /* Menu */,
 				651B9F1F1F49507000FF2637 /* Model */,
 				651B9F1A1F493ED300FF2637 /* View */,
 				651B9F151F48989600FF2637 /* Helper */,
@@ -90,6 +97,8 @@
 				651B9F181F489B1000FF2637 /* LogTableView.swift */,
 				651B9F221F496EAC00FF2637 /* MainWindow.swift */,
 				651B9F241F49723800FF2637 /* LogPreviewViewController.swift */,
+				651B9F2A1F498C9C00FF2637 /* MainMenuItem.swift */,
+				651B9F2C1F498D0B00FF2637 /* MainMenu.swift */,
 			);
 			path = SerialPortCat;
 			sourceTree = "<group>";
@@ -117,6 +126,14 @@
 				651B9F201F49508300FF2637 /* LogData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		651B9F2E1F498D3500FF2637 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				651B9F2F1F499FB200FF2637 /* NewWindowMenuItem.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		D23A4BC3A311B652F47D965F /* Frameworks */ = {
@@ -260,12 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651B9F2B1F498C9C00FF2637 /* MainMenuItem.swift in Sources */,
 				651B9F231F496EAC00FF2637 /* MainWindow.swift in Sources */,
 				651B9F211F49508300FF2637 /* LogData.swift in Sources */,
+				651B9F301F499FB200FF2637 /* NewWindowMenuItem.swift in Sources */,
 				651B9F271F49854900FF2637 /* README.md in Sources */,
 				651B9F091F48945600FF2637 /* ViewController.swift in Sources */,
 				651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */,
 				651B9F071F48945600FF2637 /* AppDelegate.swift in Sources */,
+				651B9F2D1F498D0B00FF2637 /* MainMenu.swift in Sources */,
 				651B9F1E1F493F2E00FF2637 /* LogContentTableCellView.swift in Sources */,
 				651B9F1C1F493F1F00FF2637 /* LogTimeTableCellView.swift in Sources */,
 				651B9F191F489B1000FF2637 /* LogTableView.swift in Sources */,

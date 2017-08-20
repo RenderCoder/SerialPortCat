@@ -10,7 +10,7 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="MainMenu" customModule="SerialPortCat" customModuleProvider="target">
                         <items>
                             <menuItem title="SerialPortCat" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -60,9 +60,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
+                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl" customClass="NewWindowMenuItem" customModule="SerialPortCat" customModuleProvider="target">
+                                            <accessibility identifier="menu_bar_file_new"/>
                                             <connections>
                                                 <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <segue destination="XfG-lQ-9wD" kind="show" id="T8n-3s-nKb"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -695,13 +697,13 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX6-Is-BWW">
-                                <rect key="frame" x="20" y="50" width="440" height="307"/>
+                                <rect key="frame" x="20" y="119" width="440" height="238"/>
                                 <clipView key="contentView" id="yRg-7X-SUk">
-                                    <rect key="frame" x="1" y="0.0" width="438" height="306"/>
+                                    <rect key="frame" x="1" y="0.0" width="438" height="237"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="jUV-oV-aDr" viewBased="YES" id="l1j-7u-jbT" customClass="LogTableView" customModule="SerialPortCat" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="283"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -829,7 +831,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tbh-Hn-1WK">
-                                <rect key="frame" x="325" y="13" width="141" height="32"/>
+                                <rect key="frame" x="84" y="13" width="141" height="32"/>
                                 <buttonCell key="cell" type="push" title="Close Serial Port" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jYZ-Bk-jXf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -897,8 +899,51 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-VU-T4s">
+                                <rect key="frame" x="20" y="50" width="440" height="60"/>
+                                <clipView key="contentView" id="OXO-ar-HbA">
+                                    <rect key="frame" x="1" y="1" width="438" height="58"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="kqq-FS-JGJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="58"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="438" height="58"/>
+                                            <size key="maxSize" width="524" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="89K-Bb-v5c"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="beZ-Pv-tvq">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="0uJ-wn-jKW">
+                                    <rect key="frame" x="423" y="1" width="16" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O2E-rN-s5X">
+                                <rect key="frame" x="336" y="13" width="130" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cS8-JH-ynN"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Send Hex Data" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="TZu-8P-tKV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="tapSendDataButton:" target="XfG-lQ-9wD" id="qA0-1a-qOg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="kqq-FS-JGJ" firstAttribute="top" secondItem="QX6-Is-BWW" secondAttribute="bottom" constant="10" id="0JG-uz-nmD"/>
                             <constraint firstAttribute="trailing" secondItem="QX6-Is-BWW" secondAttribute="trailing" constant="20" symbolic="YES" id="1bo-oO-cqL"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="baseline" secondItem="n0h-tX-Fnp" secondAttribute="baseline" id="30p-gy-qH0"/>
                             <constraint firstItem="tTR-7A-9jY" firstAttribute="centerY" secondItem="ETP-p7-rpQ" secondAttribute="centerY" id="Bhh-A0-qI2"/>
@@ -906,21 +951,25 @@
                             <constraint firstAttribute="bottom" secondItem="h8f-k7-Pre" secondAttribute="bottom" constant="20" symbolic="YES" id="Ibt-Ze-Hlg"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="leading" secondItem="mPd-dH-ZF6" secondAttribute="trailing" constant="8" symbolic="YES" id="JW5-Wa-3zi"/>
                             <constraint firstItem="mPd-dH-ZF6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="Jr0-Nz-FGk"/>
-                            <constraint firstItem="h8f-k7-Pre" firstAttribute="top" secondItem="QX6-Is-BWW" secondAttribute="bottom" constant="9" id="TtJ-mt-X02"/>
+                            <constraint firstAttribute="bottom" secondItem="xfw-VU-T4s" secondAttribute="bottom" constant="50" id="K82-rs-O4q"/>
+                            <constraint firstAttribute="bottom" secondItem="O2E-rN-s5X" secondAttribute="bottom" constant="20" id="Vwb-iN-zFM"/>
                             <constraint firstItem="h8f-k7-Pre" firstAttribute="baseline" secondItem="tbh-Hn-1WK" secondAttribute="baseline" id="ae8-c6-IdG"/>
                             <constraint firstItem="QX6-Is-BWW" firstAttribute="top" secondItem="ETP-p7-rpQ" secondAttribute="bottom" constant="10" id="e4u-HU-QtW"/>
                             <constraint firstItem="l9z-1N-34z" firstAttribute="leading" secondItem="tTR-7A-9jY" secondAttribute="trailing" constant="16" id="fPl-7S-Bjw"/>
                             <constraint firstItem="tog-kf-iQd" firstAttribute="trailing" secondItem="n0h-tX-Fnp" secondAttribute="trailing" id="fcc-04-bUr"/>
                             <constraint firstItem="mPd-dH-ZF6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="gDg-QM-sHS"/>
                             <constraint firstItem="tog-kf-iQd" firstAttribute="height" secondItem="n0h-tX-Fnp" secondAttribute="height" id="he2-Ex-hRX"/>
+                            <constraint firstAttribute="trailing" secondItem="xfw-VU-T4s" secondAttribute="trailing" constant="20" id="hhV-aW-fJe"/>
                             <constraint firstAttribute="trailing" secondItem="n0h-tX-Fnp" secondAttribute="trailing" constant="17" id="jH2-Qt-q43"/>
-                            <constraint firstItem="QX6-Is-BWW" firstAttribute="trailing" secondItem="tbh-Hn-1WK" secondAttribute="trailing" id="keA-8k-xpm"/>
                             <constraint firstItem="QX6-Is-BWW" firstAttribute="leading" secondItem="h8f-k7-Pre" secondAttribute="leading" id="kmd-ic-gci"/>
                             <constraint firstItem="tog-kf-iQd" firstAttribute="width" secondItem="n0h-tX-Fnp" secondAttribute="width" id="lSc-ei-FnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="O2E-rN-s5X" secondAttribute="trailing" constant="20" id="mfU-n8-67x"/>
                             <constraint firstItem="n0h-tX-Fnp" firstAttribute="leading" secondItem="Dp1-9o-6PC" secondAttribute="trailing" constant="16" id="mfj-bT-krh"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="trailing" secondItem="l9z-1N-34z" secondAttribute="trailing" id="mmn-5n-8Fg"/>
+                            <constraint firstItem="xfw-VU-T4s" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nXH-Kd-MiL"/>
                             <constraint firstItem="QX6-Is-BWW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="pJE-u8-7rq"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="leading" secondItem="tTR-7A-9jY" secondAttribute="leading" id="ro6-wb-ar0"/>
+                            <constraint firstItem="tbh-Hn-1WK" firstAttribute="leading" secondItem="h8f-k7-Pre" secondAttribute="trailing" constant="10" id="upi-fg-p7R"/>
                             <constraint firstItem="tog-kf-iQd" firstAttribute="centerY" secondItem="ETP-p7-rpQ" secondAttribute="centerY" id="vLb-v8-7Ds"/>
                             <constraint firstItem="l9z-1N-34z" firstAttribute="top" secondItem="Dp1-9o-6PC" secondAttribute="bottom" constant="13" id="w9T-gS-wXj"/>
                             <constraint firstItem="l9z-1N-34z" firstAttribute="centerY" secondItem="ETP-p7-rpQ" secondAttribute="centerY" id="wq3-EK-89P"/>
@@ -931,6 +980,7 @@
                     <connections>
                         <outlet property="customBaudRateTextField" destination="l9z-1N-34z" id="mqi-dm-jqe"/>
                         <outlet property="raudRateSelector" destination="tTR-7A-9jY" id="D6N-qa-cAI"/>
+                        <outlet property="sendDataTextView" destination="kqq-FS-JGJ" id="sj0-Kf-NRw"/>
                         <outlet property="serialPortListPopUpButton" destination="Dp1-9o-6PC" id="Re4-al-xIU"/>
                         <outlet property="tableView" destination="l1j-7u-jbT" id="CsH-cB-YAu"/>
                     </connections>
@@ -989,4 +1039,7 @@
             <point key="canvasLocation" x="1245" y="851"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cq2-FE-JQM"/>
+    </inferredMetricsTieBreakers>
 </document>
