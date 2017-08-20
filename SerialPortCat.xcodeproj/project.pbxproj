@@ -11,15 +11,29 @@
 		651B9F091F48945600FF2637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F081F48945600FF2637 /* ViewController.swift */; };
 		651B9F0B1F48945600FF2637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651B9F0A1F48945600FF2637 /* Assets.xcassets */; };
 		651B9F0E1F48945600FF2637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651B9F0C1F48945600FF2637 /* Main.storyboard */; };
+		651B9F171F4898AD00FF2637 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F161F4898AD00FF2637 /* RegexHelper.swift */; };
+		651B9F191F489B1000FF2637 /* LogTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F181F489B1000FF2637 /* LogTableView.swift */; };
+		651B9F1C1F493F1F00FF2637 /* LogTimeTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F1B1F493F1F00FF2637 /* LogTimeTableCellView.swift */; };
+		651B9F1E1F493F2E00FF2637 /* LogContentTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F1D1F493F2E00FF2637 /* LogContentTableCellView.swift */; };
+		651B9F211F49508300FF2637 /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F201F49508300FF2637 /* LogData.swift */; };
+		F6C2E77D405766F2A4B3F80D /* Pods_SerialPortCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SerialPortCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		637E7D5ACBCFB7DFFB54A347 /* Pods-SerialPortCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerialPortCat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat.release.xcconfig"; sourceTree = "<group>"; };
 		651B9F031F48945600FF2637 /* SerialPortCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerialPortCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651B9F061F48945600FF2637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		651B9F081F48945600FF2637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		651B9F0A1F48945600FF2637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651B9F0D1F48945600FF2637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		651B9F0F1F48945600FF2637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651B9F161F4898AD00FF2637 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
+		651B9F181F489B1000FF2637 /* LogTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableView.swift; sourceTree = "<group>"; };
+		651B9F1B1F493F1F00FF2637 /* LogTimeTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTimeTableCellView.swift; sourceTree = "<group>"; };
+		651B9F1D1F493F2E00FF2637 /* LogContentTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogContentTableCellView.swift; sourceTree = "<group>"; };
+		651B9F201F49508300FF2637 /* LogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
+		7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerialPortCat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C2E77D405766F2A4B3F80D /* Pods_SerialPortCat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +53,8 @@
 			children = (
 				651B9F051F48945600FF2637 /* SerialPortCat */,
 				651B9F041F48945600FF2637 /* Products */,
+				EC6754DDE5C4C4B5077537C4 /* Pods */,
+				D23A4BC3A311B652F47D965F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +69,59 @@
 		651B9F051F48945600FF2637 /* SerialPortCat */ = {
 			isa = PBXGroup;
 			children = (
+				651B9F1F1F49507000FF2637 /* Model */,
+				651B9F1A1F493ED300FF2637 /* View */,
+				651B9F151F48989600FF2637 /* Helper */,
 				651B9F061F48945600FF2637 /* AppDelegate.swift */,
 				651B9F081F48945600FF2637 /* ViewController.swift */,
 				651B9F0A1F48945600FF2637 /* Assets.xcassets */,
 				651B9F0C1F48945600FF2637 /* Main.storyboard */,
 				651B9F0F1F48945600FF2637 /* Info.plist */,
+				651B9F181F489B1000FF2637 /* LogTableView.swift */,
 			);
 			path = SerialPortCat;
+			sourceTree = "<group>";
+		};
+		651B9F151F48989600FF2637 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				651B9F161F4898AD00FF2637 /* RegexHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		651B9F1A1F493ED300FF2637 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				651B9F1B1F493F1F00FF2637 /* LogTimeTableCellView.swift */,
+				651B9F1D1F493F2E00FF2637 /* LogContentTableCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		651B9F1F1F49507000FF2637 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				651B9F201F49508300FF2637 /* LogData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D23A4BC3A311B652F47D965F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC6754DDE5C4C4B5077537C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */,
+				637E7D5ACBCFB7DFFB54A347 /* Pods-SerialPortCat.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 651B9F121F48945600FF2637 /* Build configuration list for PBXNativeTarget "SerialPortCat" */;
 			buildPhases = (
+				0E6630F5ED506A9166A7EDE6 /* [CP] Check Pods Manifest.lock */,
 				651B9EFF1F48945600FF2637 /* Sources */,
 				651B9F001F48945600FF2637 /* Frameworks */,
 				651B9F011F48945600FF2637 /* Resources */,
+				9241C22B032A2935263008AC /* [CP] Embed Pods Frameworks */,
+				04692C1FC57A2409C440CF6F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,13 +194,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04692C1FC57A2409C440CF6F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E6630F5ED506A9166A7EDE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9241C22B032A2935263008AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		651B9EFF1F48945600FF2637 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651B9F211F49508300FF2637 /* LogData.swift in Sources */,
 				651B9F091F48945600FF2637 /* ViewController.swift in Sources */,
 				651B9F071F48945600FF2637 /* AppDelegate.swift in Sources */,
+				651B9F1E1F493F2E00FF2637 /* LogContentTableCellView.swift in Sources */,
+				651B9F1C1F493F1F00FF2637 /* LogTimeTableCellView.swift in Sources */,
+				651B9F191F489B1000FF2637 /* LogTableView.swift in Sources */,
+				651B9F171F4898AD00FF2637 /* RegexHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +365,7 @@
 		};
 		651B9F131F48945600FF2637 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -260,6 +380,7 @@
 		};
 		651B9F141F48945600FF2637 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 637E7D5ACBCFB7DFFB54A347 /* Pods-SerialPortCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -291,6 +412,7 @@
 				651B9F141F48945600FF2637 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
