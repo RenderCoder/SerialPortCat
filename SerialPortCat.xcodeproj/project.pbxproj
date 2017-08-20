@@ -18,6 +18,8 @@
 		651B9F211F49508300FF2637 /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F201F49508300FF2637 /* LogData.swift */; };
 		651B9F231F496EAC00FF2637 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F221F496EAC00FF2637 /* MainWindow.swift */; };
 		651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F241F49723800FF2637 /* LogPreviewViewController.swift */; };
+		651B9F271F49854900FF2637 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F261F49854900FF2637 /* README.md */; };
+		651B9F291F49888300FF2637 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 651B9F281F49888300FF2637 /* LICENSE */; };
 		F6C2E77D405766F2A4B3F80D /* Pods_SerialPortCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		651B9F201F49508300FF2637 /* LogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
 		651B9F221F496EAC00FF2637 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		651B9F241F49723800FF2637 /* LogPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPreviewViewController.swift; sourceTree = "<group>"; };
+		651B9F261F49854900FF2637 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		651B9F281F49888300FF2637 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerialPortCat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +59,8 @@
 		651B9EFA1F48945600FF2637 = {
 			isa = PBXGroup;
 			children = (
+				651B9F281F49888300FF2637 /* LICENSE */,
+				651B9F261F49854900FF2637 /* README.md */,
 				651B9F051F48945600FF2637 /* SerialPortCat */,
 				651B9F041F48945600FF2637 /* Products */,
 				EC6754DDE5C4C4B5077537C4 /* Pods */,
@@ -193,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651B9F291F49888300FF2637 /* LICENSE in Resources */,
 				651B9F0B1F48945600FF2637 /* Assets.xcassets in Resources */,
 				651B9F0E1F48945600FF2637 /* Main.storyboard in Resources */,
 			);
@@ -255,6 +262,7 @@
 			files = (
 				651B9F231F496EAC00FF2637 /* MainWindow.swift in Sources */,
 				651B9F211F49508300FF2637 /* LogData.swift in Sources */,
+				651B9F271F49854900FF2637 /* README.md in Sources */,
 				651B9F091F48945600FF2637 /* ViewController.swift in Sources */,
 				651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */,
 				651B9F071F48945600FF2637 /* AppDelegate.swift in Sources */,

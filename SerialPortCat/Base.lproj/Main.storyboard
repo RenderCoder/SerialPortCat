@@ -844,6 +844,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="tapClearButton:" target="XfG-lQ-9wD" id="ehB-us-bPf"/>
+                                </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tTR-7A-9jY">
                                 <rect key="frame" x="133" y="362" width="130" height="26"/>

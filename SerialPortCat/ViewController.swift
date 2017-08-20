@@ -32,6 +32,9 @@ class ViewController: NSViewController {
         super.viewDidAppear()
         
         guard let window = view.window as? MainWindow else {return}
+        
+        window.title = "Serial Port Cat"
+        
         window.addKeyEventCallback { [unowned self] (event: NSEvent) in
             guard event.keyCode == 49 else {return}
             guard self.tableView.selectedRowIndexes.count > 0 else {return}
@@ -134,6 +137,9 @@ class ViewController: NSViewController {
         
     }
     
+    @IBAction func tapClearButton(_ sender: NSButton) {
+        tableView.clear()
+    }
     
 }
 

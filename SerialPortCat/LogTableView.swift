@@ -39,6 +39,11 @@ class LogTableView: NSTableView {
         return dataShadow.count
     }
     
+    func clear() {
+        dataShadow.removeAll()
+        reloadData()
+    }
+    
 }
 
 extension LogTableView: NSTableViewDelegate {
