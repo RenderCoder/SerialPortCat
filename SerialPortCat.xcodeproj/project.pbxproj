@@ -16,6 +16,8 @@
 		651B9F1C1F493F1F00FF2637 /* LogTimeTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F1B1F493F1F00FF2637 /* LogTimeTableCellView.swift */; };
 		651B9F1E1F493F2E00FF2637 /* LogContentTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F1D1F493F2E00FF2637 /* LogContentTableCellView.swift */; };
 		651B9F211F49508300FF2637 /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F201F49508300FF2637 /* LogData.swift */; };
+		651B9F231F496EAC00FF2637 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F221F496EAC00FF2637 /* MainWindow.swift */; };
+		651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B9F241F49723800FF2637 /* LogPreviewViewController.swift */; };
 		F6C2E77D405766F2A4B3F80D /* Pods_SerialPortCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C39E63A4199D8239106C429 /* Pods_SerialPortCat.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		651B9F1B1F493F1F00FF2637 /* LogTimeTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTimeTableCellView.swift; sourceTree = "<group>"; };
 		651B9F1D1F493F2E00FF2637 /* LogContentTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogContentTableCellView.swift; sourceTree = "<group>"; };
 		651B9F201F49508300FF2637 /* LogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
+		651B9F221F496EAC00FF2637 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		651B9F241F49723800FF2637 /* LogPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPreviewViewController.swift; sourceTree = "<group>"; };
 		7A3921872B04D128FF12A831 /* Pods-SerialPortCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerialPortCat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SerialPortCat/Pods-SerialPortCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,8 @@
 				651B9F0C1F48945600FF2637 /* Main.storyboard */,
 				651B9F0F1F48945600FF2637 /* Info.plist */,
 				651B9F181F489B1000FF2637 /* LogTableView.swift */,
+				651B9F221F496EAC00FF2637 /* MainWindow.swift */,
+				651B9F241F49723800FF2637 /* LogPreviewViewController.swift */,
 			);
 			path = SerialPortCat;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651B9F231F496EAC00FF2637 /* MainWindow.swift in Sources */,
 				651B9F211F49508300FF2637 /* LogData.swift in Sources */,
 				651B9F091F48945600FF2637 /* ViewController.swift in Sources */,
+				651B9F251F49723800FF2637 /* LogPreviewViewController.swift in Sources */,
 				651B9F071F48945600FF2637 /* AppDelegate.swift in Sources */,
 				651B9F1E1F493F2E00FF2637 /* LogContentTableCellView.swift in Sources */,
 				651B9F1C1F493F1F00FF2637 /* LogTimeTableCellView.swift in Sources */,

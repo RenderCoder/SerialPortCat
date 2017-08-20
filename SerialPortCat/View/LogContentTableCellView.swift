@@ -14,6 +14,8 @@ class LogContentTableCellView: NSTableCellView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+        textField?.maximumNumberOfLines = 1
+        textField?.lineBreakMode = NSLineBreakMode(rawValue: 0)!
     }
     
 }

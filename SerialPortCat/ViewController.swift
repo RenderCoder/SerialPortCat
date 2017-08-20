@@ -13,21 +13,57 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var serialPortListPopUpButton: NSPopUpButton!
     @IBOutlet weak var tableView: LogTableView!
+    @IBOutlet weak var raudRateSelector: NSPopUpButton!
+    @IBOutlet weak var customBaudRateTextField: NSTextField!
     
     var serialPort: ORSSerialPort?
+    let previewVC = LogPreviewViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Serial Port Cat"
         
+        setupBaudRateSelector()
         refreshSerialPortList()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        guard let window = view.window as? MainWindow else {return}
+        window.addKeyEventCallback { [unowned self] (event: NSEvent) in
+            guard event.keyCode == 49 else {return}
+            guard self.tableView.selectedRowIndexes.count > 0 else {return}
+            print(self.tableView.selectedRowIndexes)
+            
+            var content: String = ""
+            
+            for (_, item) in self.tableView.selectedRowIndexes.enumerated() {
+                guard let cellData = self.tableView.cellData(forIndex: item) else {continue}
+                // content += "\(cellData.time)    \(cellData.content)\n"
+                content += cellData.content
+            }
+            
+            self.previewVC.display(content: content)
+        }
     }
 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    
+    private func setupBaudRateSelector() {
+        raudRateSelector.removeAllItems()
+        raudRateSelector.addItems(withTitles: [
+            "9600",
+            "115200",
+            "921600",
+            "custom"
+            ])
     }
     
     private func refreshSerialPortList() {
@@ -70,7 +106,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func didSelectSerialPort(_ sender: NSPopUpButton) {
-        NSLog("did select serial port: \(sender.selectedItem?.title)")
+        NSLog("did select serial port: \(sender.selectedItem!.title)")
         guard let serialPortName = sender.selectedItem?.title else {return}
         connect(serialPortPath: "/dev/\(serialPortName)")
     }
@@ -83,6 +119,19 @@ class ViewController: NSViewController {
     @IBAction func tapCloseSerialPortButton(_ sender: NSButton) {
         NSLog("tapCloseSerialPortButton()")
         serialPort?.close()
+    }
+    
+    @IBAction func didSelectBaudRate(_ sender: NSPopUpButton) {
+        NSLog("did select Baud Rate \(sender.selectedItem!.title)")
+        guard let targetBaudRate = sender.selectedItem?.title else {return}
+        if let targetBaudRateNumber = Int(targetBaudRate) {
+            serialPort?.baudRate = NSNumber(value: targetBaudRateNumber)
+        } else {
+            // custom
+            let customBaudNumber = customBaudRateTextField.intValue
+            serialPort?.baudRate = NSNumber(value: customBaudNumber)
+        }
+        
     }
     
     

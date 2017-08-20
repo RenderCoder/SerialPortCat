@@ -51,7 +51,30 @@ extension LogTableView: NSTableViewDelegate {
             let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView,
             let cellData = cellData(forIndex: row)
         {
-            cell.textField?.stringValue = "\(cellData.content) \(row)"
+            switch cellIdentifier {
+                case "time":
+                let calender = Calendar.current
+                let components = calender.dateComponents([.hour, .minute, .second, .nanosecond], from: cellData.time)
+                guard
+                    var hour = components.hour,
+                    var minute = components.minute,
+                    var second = components.second,
+                    var nanosecond = components.nanosecond
+                else {
+                    return nil
+                }
+                
+                func formatTimeComponent( number: Int) -> String {
+                    return String(format: "%02d", number)
+                }
+                
+                cell.textField?.stringValue = "\(formatTimeComponent(number: hour)):\(formatTimeComponent(number: minute)):\(formatTimeComponent(number: second)).\(components.nanosecond!)"
+            case "content":
+                cell.textField?.stringValue = cellData.content
+            default:
+                break
+            }
+            
             return cell
         }
         
