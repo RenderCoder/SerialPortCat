@@ -21,6 +21,23 @@ class LogTableView: NSTableView {
     }
     
     // MARK: - Data functions
+    func append(data: LogData) {
+        dataShadow.append(data)
+        
+        insertRows(at: NSIndexSet(index: numberOfRows) as IndexSet, withAnimation: NSTableViewAnimationOptions.slideDown)
+        if selectedRowIndexes.count == 0 {
+            scrollToEndOfDocument(nil)
+        }
+    }
+    
+    func cellData(forIndex index: Int) -> LogData? {
+        guard dataShadow.count > index else {return nil}
+        return dataShadow[index]
+    }
+    
+    var dataCount: Int {
+        return dataShadow.count
+    }
     
 }
 
@@ -30,8 +47,11 @@ extension LogTableView: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cellIdentifier = tableColumn?.identifier else {return nil}
         
-        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
-            cell.textField?.stringValue = "\(cellIdentifier) \(row)"
+        if
+            let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView,
+            let cellData = cellData(forIndex: row)
+        {
+            cell.textField?.stringValue = "\(cellData.content) \(row)"
             return cell
         }
         
@@ -44,7 +64,7 @@ extension LogTableView: NSTableViewDataSource {
     
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 10
+        return dataCount
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {

@@ -793,8 +793,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-Nt-HyP">
+                                <rect key="frame" x="16" y="13" width="118" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="N5D-Fk-MOR"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Test add row" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M55-KQ-f1W">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="tapTestAddRowButton:" target="XfG-lQ-9wD" id="Lxo-qs-XfX"/>
+                                </connections>
+                            </button>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dp1-9o-6PC">
-                                <rect key="frame" x="18" y="199" width="445" height="26"/>
+                                <rect key="frame" x="18" y="199" width="353" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bwR-A3-2SA"/>
                                 </constraints>
@@ -809,32 +822,53 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="didSelectSerialPort:" target="XfG-lQ-9wD" id="FdK-M4-CuE"/>
+                                </connections>
                             </popUpButton>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-Nt-HyP">
-                                <rect key="frame" x="16" y="13" width="118" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n0h-tX-Fnp">
+                                <rect key="frame" x="382" y="195" width="87" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="N5D-Fk-MOR"/>
+                                    <constraint firstAttribute="width" constant="75" id="Emf-bD-8zp"/>
+                                    <constraint firstAttribute="height" constant="21" id="hqR-8t-Ala"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Test add row" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M55-KQ-f1W">
+                                <buttonCell key="cell" type="push" title="Refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fKS-fS-u7L">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="tapTestAddRowButton:" target="XfG-lQ-9wD" id="Lxo-qs-XfX"/>
+                                    <action selector="tapRefreshSerialPortListButton:" target="XfG-lQ-9wD" id="vLr-kh-H5z"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tbh-Hn-1WK">
+                                <rect key="frame" x="325" y="13" width="141" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="46b-y4-tIn"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Close Serial Port" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jYZ-Bk-jXf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="tapCloseSerialPortButton:" target="XfG-lQ-9wD" id="4JF-ka-2AQ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="QX6-Is-BWW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="3dc-5G-yce"/>
                             <constraint firstItem="mPd-dH-ZF6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="H5V-wY-yxW"/>
+                            <constraint firstItem="n0h-tX-Fnp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="47" id="HI5-ed-PK8"/>
                             <constraint firstAttribute="bottom" secondItem="QX6-Is-BWW" secondAttribute="bottom" constant="50" id="J2h-BE-OFe"/>
                             <constraint firstAttribute="bottom" secondItem="mmh-Nt-HyP" secondAttribute="bottom" constant="20" id="NJl-Lq-WjF"/>
+                            <constraint firstAttribute="trailing" secondItem="n0h-tX-Fnp" secondAttribute="trailing" constant="17" id="Ur3-gq-ArV"/>
                             <constraint firstAttribute="trailing" secondItem="QX6-Is-BWW" secondAttribute="trailing" constant="20" id="V4z-bR-TTb"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="top" secondItem="mPd-dH-ZF6" secondAttribute="bottom" constant="10" id="Xo3-CC-YBl"/>
                             <constraint firstItem="mPd-dH-ZF6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="fRa-nN-4at"/>
+                            <constraint firstAttribute="bottom" secondItem="tbh-Hn-1WK" secondAttribute="bottom" constant="20" id="fVf-us-zri"/>
+                            <constraint firstAttribute="trailing" secondItem="tbh-Hn-1WK" secondAttribute="trailing" constant="20" id="fjM-7l-1hm"/>
                             <constraint firstItem="QX6-Is-BWW" firstAttribute="top" secondItem="Dp1-9o-6PC" secondAttribute="bottom" constant="8" id="kvw-NI-e3K"/>
                             <constraint firstItem="Dp1-9o-6PC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="l4O-C8-DhV"/>
-                            <constraint firstAttribute="trailing" secondItem="Dp1-9o-6PC" secondAttribute="trailing" constant="20" id="pnU-hp-nI3"/>
+                            <constraint firstItem="n0h-tX-Fnp" firstAttribute="leading" secondItem="Dp1-9o-6PC" secondAttribute="trailing" constant="20" id="l5v-Nu-CtV"/>
                             <constraint firstItem="mmh-Nt-HyP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="xiN-Ye-uBG"/>
                         </constraints>
                     </view>
